@@ -14,3 +14,11 @@ mini projects
         return result
 
     return calculate_possibilities(numbers, numbers)
+
+
+
+def first_reverse(str):
+    return str[::-1]
+
+input_str = input("Enter a string: ")
+print(first_reverse(input_str))
