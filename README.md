@@ -22,3 +22,15 @@ def first_reverse(str):
 
 input_str = input("Enter a string: ")
 print(first_reverse(input_str))
+
+
+def __init__(self, item):
+     self.item = item
+      self.next = None
+stack = Stack()#stack.push(1) 
+stack.push(2) 
+print(stack.pop()) 
+stack.push(3) 
+stack.push(4) 
+print(stack.pop()) 
+print(stack.pop())
