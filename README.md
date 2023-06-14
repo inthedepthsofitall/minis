@@ -34,3 +34,19 @@ stack.push(3)
 stack.push(4) 
 print(stack.pop()) 
 print(stack.pop())
+
+
+def FindIntersection(strArr):
+    arrN1 = strArr[0].split(', ')
+    arrN2 = strArr[1].split(', ')
+    matchArr = []
+
+    for e in arrN2:
+        if e in arrN1:
+            matchArr.append(e)
+
+    return ','.join(matchArr) if matchArr else False
+
+# keep this function call here
+print(FindIntersection(input()))
+
