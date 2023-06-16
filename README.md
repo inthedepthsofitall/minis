@@ -50,3 +50,13 @@ def FindIntersection(strArr):
 # keep this function call here
 print(FindIntersection(input()))
 
+var byteSize = 64
+var buffer = new ArrayBuffer(byteSize);
+var i32View = new Int32Array(buffer);
+buffer.bytelength;
+i32View.byteLength;
+var byteSize = 64
+var buffer = new ArrayBuffer(byteSize);
+console.log(i32View)
+
+
