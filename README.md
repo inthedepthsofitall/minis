@@ -50,6 +50,10 @@ def FindIntersection(strArr):
 # keep this function call here
 print(FindIntersection(input()))
 
+#Your buffer should be 64 bytes large.
+#Passed:Your i32View view of your buffer should be 64 bytes large.
+#Passed:Your i32View view of your buffer should be 16 elements long.
+
 var byteSize = 64
 var buffer = new ArrayBuffer(byteSize);
 var i32View = new Int32Array(buffer);
@@ -58,5 +62,9 @@ i32View.byteLength;
 var byteSize = 64
 var buffer = new ArrayBuffer(byteSize);
 console.log(i32View)
+
+#Typed arrays do not have some of the methods traditional arrays have such as .pop() or .push(). Typed arrays also fail Array.isArray() that checks if something is an array. #Although simpler, this can be an advantage for less-sophisticated JavaScript engines to implement them.
+
+#First create a buffer that is 64-bytes. Then create a Int32Array typed array with a view of it called i32View
 
 
