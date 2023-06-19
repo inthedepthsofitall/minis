@@ -102,3 +102,28 @@ function Queue() {
 
 }
 
+
+def double(x):
+  return 2 * x
+  
+def quad(x):
+  return double(double(x))
+  
+def hello(name):
+  print('hello cunt,', name + ' how are you today?')
+  
+def repeat(string, n):
+  print(string, n)
+  
+def square(string, n):
+  for i in range(n):
+    print(repeat(string, n))
+    
+print(double(5))
+print(quad(4))
+hello('Kyke')
+print(repeat('hi', 10))
+square('*', 4)
+
+
+
