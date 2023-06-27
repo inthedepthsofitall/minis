@@ -182,3 +182,53 @@ if __name__ == '__main__':
     fptr.close()
 
 
+def insertNodeAtPosition(llist, data, position):
+    if llist is None:
+        llist = SinglyLinkedListNode(data)
+        return llist
+
+    if position == 0:
+        new_node = SinglyLinkedListNode(data)
+        new_node.next = llist
+        return new_node
+
+    prev_node = llist
+    current_node = llist.next
+    i = 1
+    while i < position and current_node is not None:
+        prev_node = current_node
+        current_node = current_node.next
+        i += 1
+
+    if current_node is None:
+        return llist
+
+    new_node = SinglyLinkedListNode(data)
+    new_node.next = current_node
+    prev_node.next = new_node
+
+    return llist
+ Complete the insertNodeAtTail function below.
+
+#
+# For your reference:
+#
+# SinglyLinkedListNode:
+#     int data
+#     SinglyLinkedListNode next
+#
+#
+def insertNodeAtTail(head, data):
+    if head is None:
+        new_node = SinglyLinkedListNode(data)
+        return new_node
+    current_node = head
+    while current_node.next is not None:
+        current_node = current_node.next
+    
+    new_node = SinglyLinkedListNode(data)
+    current_node.next = new_node
+    
+    return head
+        
+
