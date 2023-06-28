@@ -230,5 +230,10 @@ def insertNodeAtTail(head, data):
     current_node.next = new_node
     
     return head
-        
+
+
+def fec_sum(n):#recursion
+  if n <= 1:
+    return 0
+  return n + fec_sum(n - 1)
 
