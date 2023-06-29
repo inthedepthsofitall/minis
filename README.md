@@ -237,3 +237,17 @@ def fec_sum(n):#recursion
     return 0
   return n + fec_sum(n - 1)
 
+
+def foo(lst: list[int], target: int):
+  lo = 0
+  hi = len(lst) - 1
+  ans = -1
+  while lo <= hi:
+    mid = lo + (hi - lo) // 2
+    if target == lst[mid]:
+      return mid
+    elif target > lst[mid]:
+      lo = mid + 1
+    else:
+      hi = mid - 1
+  print(ans)
