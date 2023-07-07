@@ -290,6 +290,39 @@ function LongestWord(sen) {
   return longest;
 
 }
+
+
+function PriorityQueue () {
+  this.collection = [];
+  this.printCollection = function() {
+    console.log(this.collection);
+  };
+  // Only change code below this line
+  this.enqueue = function (item, priority) {
+   let index = this.collection.findIndex(elem => elem[1] > item[1]);
+    if (index !== -1) {
+      this.collection.splice(index, 0, item);
+    } else {
+      this.collection.push(item);
+    }
+  };
+  this.dequeue = function (item, priority) {
+  return this.collection.shift()[0];
+  };
+  this.size = function () {
+  return this.collection.length;
+  }
+  this.front = function () {
+   if (!this.isEmpty()) {
+  return this.collection[0][0];
+  }
+  
+  };
+  this.isEmpty = function () {
+  return this.collection.length === 0;
+  };
+  // Only change code above this line
+}
    
 // keep this function call here 
 LongestWord(readline());
