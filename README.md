@@ -326,3 +326,55 @@ function PriorityQueue () {
    
 // keep this function call here 
 LongestWord(readline());
+
+
+class MyHashMap:
+
+    def __init__(self):
+        self.map = [None _ for i in range(10000)]
+
+    def put(self, key: int, value: int) -> None:
+        hash_val = self.hash_func(key)
+        if not self.map[hash_val]
+           self.map[hash_val] = [(key, value)]
+        else:
+            j = self.map[hash_val]
+            for k, v in j:
+                if k == key
+                   v = value
+                   return 
+            j.append(key, value)
+
+           
+        
+    def hash_function(self, key):
+        return key % 10000
+    def get(self, key: int) -> int:
+        hash_val = self.hash_function(key)
+        if self.map[hash_val]:
+            j = self.map[hash_val]
+            for k, v in j:
+                if k== key:
+                    return v
+        return -1
+        
+
+    def remove(self, key: int) -> None:
+        hash_val = self.hash_function(key)
+        if self.map[hash_val]:
+            j = self.map[hash_val]
+            for i in range(len(j)):
+                tuples = j[i]
+                  if tuples[0] == key:
+                      if i != len(j) - 1:
+                          temp = j.pop()
+                          return 
+                  j.pop()
+        
+
+
+# Your MyHashMap object will be instantiated and called as such:
+# obj = MyHashMap()
+# obj.put(key,value)
+# param_2 = obj.get(key)
+# obj.remove(key)
