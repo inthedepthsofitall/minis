@@ -378,3 +378,35 @@ class MyHashMap:
 # obj.put(key,value)
 # param_2 = obj.get(key)
 # obj.remove(key)
+
+/* 
+     C Program for simple recursion
+     This program similates the recurrence relation function , T(n) = T(n-1) +3, T(0)=5.
+     By: randerson112358
+ */
+
+# include < stdio.h >
+   
+int T( int n); // Defining function T().
+ 
+int main(void)
+{
+    int n = 8;
+    int i;
+     
+   for(i=0; i < n;  i++)
+    {
+        printf("T(%d) = %d\n", i, T(i) ); // prints 5, 8, 11, 14, 17, 20, 23, 26
+    }
+
+     //Comment out the system("pause") if you are not using Windows
+     system("pause");
+ }
+
+   int T( int n)
+    {
+        if( n == 0)
+           return 5;
+        else
+           return T(n-1) + 3;
+    }
