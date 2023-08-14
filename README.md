@@ -413,3 +413,10 @@ int main(void)
 
     //will start creating a separator
     //monitor the commits
+
+    #mix and matching code for the sake of sharpness
+    def stringent(n):
+    	for i in range(n-1):
+     		print(i)
+
+
