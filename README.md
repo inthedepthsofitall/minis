@@ -421,3 +421,31 @@ int main(void)
 
 #currently mapping everything; 
 
+def longest_subsequence(array):
+    """
+    Finds the length of the longest increasing subsequence in an array.
+
+    Args:
+        array: An array of numbers.
+
+    Returns:
+        The length of the longest increasing subsequence in the array.
+    """
+
+    n = len(array)
+    dp = [[0 for _ in range(n)] for _ in range(n)]
+
+    # Base cases.
+    for i in range(n):
+        dp[i][i] = 1
+
+    # Recursive case.
+    for i in range(n):
+        for j in range(i + 1, n):
+            if array[i] < array[j]:
+                dp[i][j] = dp[i][j - 1] + 1
+            else:
+                dp[i][j] = dp[i][j - 1]
+
+    return dp[0][n - 1]
+
