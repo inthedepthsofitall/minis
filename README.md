@@ -449,3 +449,29 @@ def longest_subsequence(array):
 
     return dp[0][n - 1]
 
+ # Here is a practice code from a cypress test
+
+ describe('Map Page Tests', () => {
+  beforeEach(() => {
+    // Log in as admin
+    cy.loginAdmin();
+
+    // Visit the map page
+    cy.visit('/');
+
+    // Wait for the page and required data to load
+    cy.waitForHomePageData();
+  });
+
+  it('should interact with the map and verify location details', () => {
+    // Click on the map tab (assuming there is a tab for the map)
+    cy.contains('MAP').click(); // Make "MAP" all caps
+    cy.contains('Satellite');
+   
+    cy.contains('ALABAMA').click();
+    //cy.contains('MONTGOMERY');
+
+   
+  });
+});
+ 
