@@ -475,3 +475,4 @@ def longest_subsequence(array):
   });
 });
  
+//will be adding more functions
