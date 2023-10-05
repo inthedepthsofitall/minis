@@ -476,3 +476,23 @@ def longest_subsequence(array):
 });
  
 //will be adding more functions
+
+
+'''
+Given a DAG that is represented as a collection of edges, i.e. ["n1", "n2"] means that n1 precedes n2 (visually, n1 -> n2),
+'''
+
+'''
+Create an adjacency list for it.
+'''
+def to_adjacency_list(edges: list[list[str]]) -> dict[str, list[str]]:
+    adj_list = {}
+    for edge in edges:
+        n1, n2 = edge
+        if n1 not in adj_list:
+            adj_list[n1] = []
+        if n2 not in adj_list:
+            adj_list[n2] = []
+        adj_list[n1].append(n2)
+    return adj_list
+
