@@ -616,3 +616,33 @@ def get_top_k_datapoints(data_collection: list[Datapoint], k: int) -> set[tuple[
 
 
   return top_k
+
+
+
+
+  from __future__ import annotations
+from typing import List
+import copy
+# =============== BEGIN DO NOT MODIFY ========================
+class Treasure:
+    pass
+
+class Monster:
+    def __init__(self, name: str, damage: int):
+        self.name = name 
+        self.damage = damage 
+        self.next = []
+
+    def append_monster(self, monster):
+        self.next.append(monster)
+
+    def append_treasure(self, treasure: Treasure):
+        self.next.append(treasure)
+
+class Player:
+    def __init__(self, health: int):
+        self.health = health 
+    
+    def battle(self, monster: Monster):
+        self.health -= monster.damage
+# =============== END DO NOT MODIFY ========================
