@@ -671,3 +671,21 @@ for word in anagram_neighbors_map:
 # "act" : ["cat", "tac"]
 # "dog" : []
 # "tac" : ["act", "cat"]
+
+
+
+
+def _dfs_count_paths_with_player(self, node: Monster, player: Player, visited: set) -> (int, int):
+      if node in visited and player.health <= 0:
+        return 0, 0
+      
+      visited.add(player)
+      total_paths, successful_paths = 0, 0
+
+      for child in node.next:
+        if child not in visited and hasattr(child, 'next'):
+          child_total, child_successful = self._dfs_count_paths_with_player(child, player, visited)
+          total_paths += child_total
+          successful_paths += child_successful
+      
+      return total_paths, successful_paths
