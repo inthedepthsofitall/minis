@@ -683,7 +683,7 @@ def _dfs_count_paths_with_player(self, node: Monster, player: Player, visited: s
       total_paths, successful_paths = 0, 0
 
       for child in node.next:
-        if child not in visited and hasattr(child, 'next'):
+        if child not in visited and hasattr(child, 'next'): #check if visited, if not increment with success
           child_total, child_successful = self._dfs_count_paths_with_player(child, player, visited)
           total_paths += child_total
           successful_paths += child_successful
