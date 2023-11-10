@@ -689,5 +689,5 @@ def _dfs_count_paths_with_player(self, node: Monster, player: Player, visited: s
           successful_paths += child_successful
       
       return total_paths, successful_paths
-############
+############adding to
 
