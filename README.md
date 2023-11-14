@@ -691,3 +691,23 @@ def _dfs_count_paths_with_player(self, node: Monster, player: Player, visited: s
       return total_paths, successful_paths
 ############adding to
 
+def probability_player_will_make_it(self, player: Player) -> float:
+      visited = set()
+      
+      def dfs(node, current_health):
+        if current_health < 0:
+            return 0.0
+
+        if isinstance(node, Treasure):
+            visited.add(node)
+            return 1.0
+
+        if isinstance(node, Monster):
+            current_health -= node.damage
+
+        if not node.next:
+            return 0.0
+
+        return sum(dfs(neighbor, current_health) for neighbor in node.next) / len(node.next)
+
+      return dfs(self.monster, player.health) 
