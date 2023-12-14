@@ -1,5 +1,5 @@
 ##### minis
-mini project with a list of different functions
+mini project with a list of different functions,
 
 
  def bracket_combinations(numbers):
