@@ -1,6 +1,6 @@
 ##### minis
 mini project with a list of different functions,
-@calc_auto
+@calc_auto_probs
 
  def bracket_combinations(numbers):
     def combo_possibilities(open, shut):
