@@ -712,3 +712,16 @@ def probability_player_will_make_it(self, player: Player) -> float:
 
       return dfs(self.monster, player.health) 
 ###
+
+
+#
+# Complete the 'timeConversion' function below.
+#
+# The function is expected to return a STRING.
+# The function accepts STRING s as parameter.
+#
+
+def timeConversion(s):
+    time_obj = datetime.strptime(s, '%I:%M:%S%p')
+
+    return time_obj.strftime('%H:%M:%S')
