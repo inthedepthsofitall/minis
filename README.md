@@ -725,3 +725,27 @@ def timeConversion(s):
     time_obj = datetime.strptime(s, '%I:%M:%S%p')
 
     return time_obj.strftime('%H:%M:%S')
+
+
+
+
+
+
+
+    def countApplesAndOranges(s, t, a, b, apples, oranges):
+    
+    app_count= 0
+    oran_count = 0
+    
+    for app_dist in apples:
+        appl_pos = a + app_dist
+        if s <= appl_pos <= t:
+            app_count += 1
+    
+    for oran_dist in oranges:
+        oran_pos = b + oran_dist
+        if s <= oran_pos <= t:
+            oran_count += 1
+    
+    print(app_count)
+    print(oran_count)
