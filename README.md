@@ -749,3 +749,25 @@ def timeConversion(s):
     
     print(app_count)
     print(oran_count)
+
+
+
+    def breakingRecords(scores):
+    # will require dynamic programming due to the tabulation of records
+    #int[2]: An array with the numbers of times she broke her records. Index 0 is for breaking most points records, and index 1 is for breaking least points records.
+    
+    if not scores:
+        return [0, 0]
+    
+    low_score = high_score = scores[0]
+    low_brok_rec = high_brok_rec = 0
+    
+    for score in scores[1:]:
+        if score < low_score:
+            low_score = score
+            low_brok_rec += 1
+        elif score > high_score:
+            high_score = score
+            high_brok_rec +=1
+            
+    return [high_brok_rec, low_brok_rec]
