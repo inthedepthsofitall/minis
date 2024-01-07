@@ -771,3 +771,28 @@ def timeConversion(s):
             high_brok_rec +=1
             
     return [high_brok_rec, low_brok_rec]
+
+
+class Solution:
+    def kClosest(self, points: List[List[int]], k: int) -> List[List[int]]:
+        #which point is closest 
+        #k in the input
+        #points will be in a list method function
+        #using euclidean between the two points
+        #function for the actual space complex/dist
+        
+        def dist(pointer):
+            print(pointer)
+            return (pointer[0] ** 2) + (pointer[1] ** 2)
+               
+        # 
+        min_val = min(points, key=dist) # sort and compare each element using key=
+        print("min", min_val)
+        max_val = max(points, key=dist)
+        print("max", max_val) 
+
+        closest = [pointer for pointer in points if dist(pointer) < dist(max_val)]
+        print("closest", closest)
+        result = (closest)
+
+        return result
