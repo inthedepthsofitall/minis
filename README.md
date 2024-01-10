@@ -796,3 +796,31 @@ class Solution:
         result = (closest)
 
         return result
+
+
+
+class Solution:
+    def kClosest(self, points: List[List[int]], k: int) -> List[List[int]]:
+        #which point is closest 
+        #k in the input
+        #points will be in a list method function
+        #using euclidean between the two points
+        #function for the actual space complex/dist
+        # min heap kth, should partition the list
+        # you could do k * m
+        # possibly bubblesort
+        # sorting is auto nlogn
+        def dist(pointer):
+            print(pointer)
+            return (pointer[0] ** 2) + (pointer[1] ** 2) # O(1)
+               
+        # 
+        sorted_list = sorted(points, key=dist) # because of the set values O(n )
+
+     # closest = [pointer for pointer in points if dist(pointer) < dist(k)]
+     # print("closest", closest)
+     # result = (closest)
+     # nlogn
+        return sorted_list[:k]
+        
+
