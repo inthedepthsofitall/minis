@@ -886,5 +886,78 @@ def unique_paths_bottom_up(m: int, n: int) -> int:
       dp[i][j] = dp[i - 1][j] + dp[i][j - 1]
   
   return dp[m -1][n - 1]
+
+
+ import unittest
+
+
+def get_permutations(string):
+    
+    # 1. build up a cache to store sub-problem solutions
+    # 2. aggregate the solutions to build a bigger solution
+    
+    # 'abcd'
+    # 1. 
+    # 2. 
+    
+    # solutions = {
+    #     '': [''],
+        # 'a': ['a'],
+        # 'b': ['b'],
+        # 'c': ['c'],
+        # 'ab': ['ab', 'ba'],
+        # 'abc': ['abc', 'bac', 'acb', 'bca', 'cab', 'cba'],
+        # 'abcd': ['abcd', 'bacd', 'acbd', 'bcad', .... ]
+    # }
+    # for letter in string:
+    #     solutions[letter] = [letter]
+    
+    permutations = [''] # ['abc', 'bac', 'acb', 'bca', 'cab', 'cba']
+    # for i, letter in enumerate(string):
+    for i in range(len(string)):
+        letter = string[i]
         
+        next_permutations = []
+        for permutation in permutations:
+            for pos in range(len(permutation) + 1):
+                # add the letter to that position
+                # if permutation== '':
+                #     pass
+                new_perm = permutation[:pos] + letter + permutation[pos:] # 
+                next_permutations.append(new_perm)
+        
+        permutations = next_permutations
+    return set(permutations)
+    
+    # code will need
+    # 1. array of previous solutions
+    # 2. for loop.. to do what?
+
+
+  # Tests
+
+class Test(unittest.TestCase):
+    def test_empty_string(self):
+        actual = get_permutations('')
+        expected = set([''])
+        self.assertEqual(actual, expected)
+
+    def test_one_character_string(self):
+        actual = get_permutations('a')
+        expected = set(['a'])
+        self.assertEqual(actual, expected)
+
+    def test_two_character_string(self):
+        actual = get_permutations('ab')
+        expected = set(['ab', 'ba'])
+        self.assertEqual(actual, expected)
+
+    def test_three_character_string(self):
+        actual = get_permutations('abc')
+        expected = set(['abc', 'acb', 'bac', 'bca', 'cab', 'cba'])
+        self.assertEqual(actual, expected)
+
+
+unittest.main(verbosity=2)
+```
 
