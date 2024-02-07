@@ -47,7 +47,7 @@ def FindIntersection(strArr):
 
     return ','.join(matchArr) if matchArr else False
 
-# keep this function call here
+# keep this function call here to run 
 print(FindIntersection(input()))
 
 #Your buffer should be 64 bytes large.
