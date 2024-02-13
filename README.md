@@ -33,7 +33,7 @@ print(stack.pop())
 stack.push(3) 
 stack.push(4) 
 print(stack.pop()) 
-print(stack.pop())
+print(stack.pop()) # verify the expect output
 
 
 def FindIntersection(strArr):
