@@ -17,7 +17,7 @@ mini functions project with a list of different functions, and
 
 
 
-def first_reverse(str):
+def first_reverse(str: string):
     return str[::-1]
 
 input_str = input("Enter a string: ")
