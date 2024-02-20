@@ -2,7 +2,7 @@
 mini functions project with a list of different functions, and
 @calc_auto_probs
 
- def bracket_combinations(numbers):
+ def bracket_combinations(numbers: int):
     def combo_possibilities(open, shut):
         if open == 0 and shut == 0:
             return 1
