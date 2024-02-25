@@ -347,7 +347,7 @@ class MyHashMap:
 
            
         
-    def hash_function(self, key):
+    def hash_function(self, key: int):
         return key % 10000
     def get(self, key: int) -> int:
         hash_val = self.hash_function(key)
