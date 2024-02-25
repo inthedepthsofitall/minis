@@ -125,7 +125,7 @@ hello('Kyke')
 print(repeat('hi', 10))
 square('*', 4)
 
-def uniq_count_dict(string):
+def uniq_count_dict(string: str):
   unique_string = {}
   for i in string:
     unique_string[i] = True # a simple of way of stating that whatever index is fine plus the return on the length should measure each different i
