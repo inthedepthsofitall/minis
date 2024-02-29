@@ -162,7 +162,7 @@ def hourglassSum(arr):
                         arr[i + 2][j] + arr[i + 2][j + 1] + arr[i + 2][j + 2]
                     )
     
-                    # Update max_sum if the current_sum is greater
+                    # Update max_sum if the current_sum is greater than
                     max_sum = max(max_sum, current_sum)
     
         return max_sum
