@@ -291,7 +291,7 @@ function LongestWord(sen) {
 
 }
 
-
+# js Priority Queue for Minimum Spanning Trees
 function PriorityQueue () {
   this.collection = [];
   this.printCollection = function() {
