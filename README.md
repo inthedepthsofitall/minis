@@ -1,4 +1,4 @@
-########## minis functi
+########## minis functio
 mini functions project with a list of different functions, and
 @calc_auto_probs
 
