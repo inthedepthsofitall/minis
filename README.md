@@ -961,3 +961,17 @@ class Test(unittest.TestCase):
 unittest.main(verbosity=2)
 ```
 
+def cost(B):
+    # Write your code here
+    n = len(B)
+    start = end = max_start = max_end = 0
+    
+    for i in range(1, n):
+        max_start = max(start + abs(B[i] - B[i - 1]), end + abs(1 - B[i]))
+        max_end = max(max_end, start + abs(1 - B[i - 1]))
+       
+        
+        start = max_start
+        end = max_end
+        
+    return max(max_start, max_end)
