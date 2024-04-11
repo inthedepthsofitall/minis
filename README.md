@@ -975,3 +975,39 @@ def cost(B):
         end = max_end
         
     return max(max_start, max_end)
+
+
+
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+        '''
+        [1,2,3,4,5], n = 2
+        [1,2,3,5]
+        [1,3,7,9]n = 1 [1,3,7] 
+        [1,2,3,4] n = 5 or []
+        [1] n = 1  []
+        we need to establish the new head per iteration
+        return the expected new head with its list
+        two-pointer algo with dummy
+        withoutn the dummy, you will bypass current node
+        '''
+        dummy = ListNode(0)
+        dummy.next = head
+        first_p = dummy
+        sec_p = dummy
+
+        for i in range(n + 1):
+            if first_p is None:
+                return dummy.next
+            first_p = first_p.next
+        
+        while first_p:
+            first_p = first_p.next
+            sec_p = sec_p.next
+        sec_p.next = sec_p.next.next
+
