@@ -1,5 +1,5 @@
 ########## minis functions
-mini functions project with a list of different functions, and different list t
+mini functions project with a list of different functions, and different list to
 @calc_auto_probs
 
  def bracket_combinations(numbers: int):
